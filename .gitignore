@@ -1,13 +1,19 @@
-# Environment variables (contains secret API keys & DB credentials)
+# Environment variables (secrets, DB password, API keys)
 .env
 .env.local
+.env.development
 .env.development.local
+.env.test
 .env.test.local
+.env.production
 .env.production.local
 .env.*
+!.env.example
 
-# Node modules / dependencies
+# Dependencies
 node_modules/
+jspm_packages/
+.npm/
 
 # Logs
 logs/
@@ -18,12 +24,24 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Build / Output directories
+# Diagnostic & temporary files
+.gemini/
+scratch/
+tmp/
+temp/
+*.tmp
+
+# Optional PDF / challenge prompt docs
+*.pdf
+
+# Build and coverage outputs
 dist/
 build/
+out/
 coverage/
+.nyc_output/
 
-# OS generated files
+# OS metadata files
 .DS_Store
 .DS_Store?
 ._*
@@ -31,10 +49,13 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# IDE files
+# Editor & IDE directories
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
 *.suo
 *.ntvs*
 *.njsproj
